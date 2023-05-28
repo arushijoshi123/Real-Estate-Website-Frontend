@@ -1,0 +1,970 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Work Sans';
+    letter-spacing: 1px;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    margin: auto;
+    padding: 0 2rem;
+    height: 4rem;
+    width: 100%;
+    background-color: #FFFF;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+}
+
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.container .item2 {
+    margin-left: 5px;
+}
+
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 1rem 0;
+
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+
+.nav-links li a:hover {
+    color: #2947A9;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a::before {
+
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+
+.nav-links li a:hover::before {
+    width: 80%;
+}
+
+/*Styling Buttons*/
+
+.contact-us {
+    color: #F9995D;
+
+    background-color: white;
+    border: 1.5px solid #2947A9;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact-us:hover {
+    color: #f2f5f7;
+    background-color: #F9995D;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #011421;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: hsl(224, 47%, 38%);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* styling hero section */
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/* heading of reason section */
+.reasons .head {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+/* styling cards of reason section */
+.reason-cards {
+    width: 85%;
+    height: max-content;
+    margin: 4rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.best-services {
+
+    border: 1.4px solid #E0E3EB;
+    border-radius: 4px;
+
+}
+
+.best-team {
+
+    border: 1.4px solid #E0E3EB;
+    border-radius: 4px;
+
+}
+
+.best-design {
+
+
+    border: 1.4px solid #E0E3EB;
+    border-radius: 4px;
+
+}
+
+.inner-content {
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+
+    text-align: left;
+
+}
+
+.inner-content h6 {
+    margin-top: 1.5rem;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+    font-size: 20px;
+}
+
+.inner-content p {
+    margin-top: 0.75rem;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* styling about us section */
+.about-us {
+    width: 90%;
+    margin: 6rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-img {
+    width: 90%;
+    height: 600px;
+    background: url("./img/left-img.svg");
+    border-radius: 4px;
+
+}
+
+.right-img {
+
+    min-height: 400px;
+    width: 488px;
+    text-align: left;
+    background-color: #2947A9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    color: white;
+    margin-left: -180px;
+}
+
+.right-img h1 {
+    padding-bottom: 1rem;
+    color: white;
+    font-family: ' Work Sans';
+    font-style: bold;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: left;
+
+}
+
+.right-img p {
+    margin: 20px 0;
+    text-align: left;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+}
+
+.right-img a {
+    text-decoration: none;
+    background-color: white;
+    color: #2947A9;
+    display: inline-block;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+
+.about-us .btn {
+
+
+    margin-left: 0rem;
+    white-space: nowrap;
+    padding: 1rem 1rem;
+    width: 60%;
+    height: auto;
+    text-align: left;
+    font-size: 18px;
+    background: #FFFFFF;
+    border: 2px solid #2947A9;
+    border-radius: 6px;
+}
+
+@media only screen and (max-width:768px) {
+    .about-us {
+        flex-direction: column;
+    }
+
+    .left-img {
+        width: 100%;
+        background-size: cover;
+
+    }
+
+    .right-img {
+        width: 60%;
+        margin: 0;
+        margin-top: -180px;
+    }
+
+    .about-us .btn {
+        width: 70%;
+    }
+}
+
+/* styling services section */
+.services {
+
+    padding-bottom: 4rem;
+    font-family: 'Work Sans';
+    background-color: #F6F8F7;
+    box-sizing: border-box;
+
+}
+
+.services .head {
+    text-align: center;
+    padding-top: 5rem;
+    color: #292E3D;
+    font-Weight: 700;
+    font-size: 36px;
+
+}
+
+/* styling responsive services cards  */
+.service1 {
+    width: 85%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+}
+
+/* styling stats section */
+/* the main background div */
+.stats {
+    display: flex;
+    background-color: white;
+    justify-content: space-evenly;
+    margin: auto;
+    height: max-content;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    width: 90%;
+
+
+}
+
+/* the content div on rt of stats section */
+.stats-content {
+    width: 30%;
+    margin-top: 7rem;
+
+    background-color: white;
+    margin: auto;
+    height: 400px;
+
+
+
+}
+
+.stats-content h1 {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    color: #2947A9;
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+
+    text-align: left;
+
+}
+
+.content {
+    margin-top: 2.5rem;
+}
+
+.stats-content p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #525B7A;
+    text-align: left;
+    margin-top: 3rem;
+    margin-left: 1rem;
+}
+
+.stats-content button {
+    margin-top: 2rem;
+    background: #2947A9;
+    border: 1px solid #2947A9;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    width: 40%;
+    height: 40px;
+    margin-left: 1rem;
+    white-space: nowrap;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* cards pack 1 of stats section --each hvng lt-img and rt-img */
+.stats-1 {
+    display: flex;
+    width: 50%;
+
+
+}
+
+.lt-img {
+    margin-top: 10rem;
+    margin-left: 5px;
+}
+
+.rt-img {
+    margin-left: -100px;
+    margin-top: 4rem;
+
+
+
+}
+
+.stats-2 {
+    display: flex;
+    width: 50%;
+    margin-top: 230px;
+    margin-left: -570px;
+
+}
+
+
+@media only screen and (max-width:768px) {
+    .stats {
+        display: grid;
+        width: 80%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 2rem;
+    }
+
+    .stats-content {
+        width: 60%;
+        margin: auto;
+
+    }
+
+    .stats-1 {
+        flex-direction: column-reverse;
+        margin: 0
+    }
+
+    .stats-2 {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .lt-img {
+        margin: 0;
+        width: 100%;
+    }
+
+    .rt-img {
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .stats-content button {
+        width: 60%;
+    }
+}
+
+
+
+
+/* styling unsplash section */
+.unsplash {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    background-image: url('./img/unsplash_MP0bgaS_d1c.svg');
+    background-color: rgba(0, 0, 0, 0.3);
+
+    background-size: 100%;
+
+    width: 100%;
+    height: 15rem;
+}
+
+.text {
+    margin-top: 4rem;
+    color: white;
+}
+
+.text h1 {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
+.text p {
+    text-align: left;
+    color: white;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFFFFF;
+
+
+}
+
+
+.unsplash .button {
+    margin-top: 7rem;
+}
+
+.unsplash button {
+    border: 2px solid white;
+    text-align: center;
+    background: none;
+    color: white;
+    padding: 10px 20px;
+    width: 50;
+    height: 40px;
+}
+
+@media only screen and (max-width:768px) {
+    .unsplash {
+        flex-direction: column;
+
+        width: 96%;
+        height: 50%;
+
+    }
+
+    .text {
+        margin: auto;
+        text-align: left;
+
+    }
+
+    .text p {
+        margin: 0;
+        text-align: left;
+    }
+
+    .unsplash button {
+        margin: 0;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+}
+
+/* styling project section */
+/* the main background div  */
+.projects {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+
+/* div of lt side for drop down */
+.drop-down-menu {
+    background-color: white;
+    width: 30%;
+
+}
+
+.drop-down-menu select:focus {
+    outline: none;
+    border-color: #2947A9;
+    border: 2px solid;
+    color: #2947A9;
+}
+
+/* div on rt hand side for images */
+.images {
+    margin-top: 5rem;
+    width: 60%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+}
+
+.image-1 img {
+    width: 100%;
+
+
+}
+
+.image-1 {
+    display: block;
+    background-color: #2947A9;
+    border-radius: 3px;
+}
+
+.image-1 h5 {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+}
+
+.image-1 p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.projects h2 {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    color: #292E3D;
+
+}
+
+.drop-down-menu select {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    border: 2px solid #2947A9;
+
+    text-align: center;
+    color: #C2C7D6;
+
+}
+
+/* styling cta section */
+.cta {
+    background-color: #F6F8F7;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+
+.contact-form {
+    margin-top: 4rem;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+h1 {
+
+    text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #292E3D;
+}
+
+p {
+    position: relative;
+    margin: auto;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #292E3D;
+
+}
+
+form {
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0 auto;
+}
+
+.row {
+    width: 100%;
+    display: grid;
+
+    grid-gap: 20px 40px;
+    margin-bottom: 20px;
+}
+
+.row textarea {
+    margin: auto;
+    width: 60%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2947A9;
+    margin-top: 5px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #E0E3EB;
+    background: #FFFFFF;
+
+}
+.bottom-div1 .container{
+    margin-top:3rem;
+    
+}
+
+/* styling reason for contacting dropdown */
+select {
+    width: 102%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2947A9;
+    margin-top: 5px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 2px solid #E0E3EB;
+    background: #FFFFFF;
+
+}
+
+input {
+    width: 100%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2947A9;
+    margin-top: 5px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #E0E3EB;
+    background: #FFFFFF;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2947A9;
+    border: 2px solid;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2947A9;
+    border: 2px solid;
+}
+
+.row select:focus {
+    outline: none;
+    border-color: #2947A9;
+    border: 2px solid;
+}
+
+.row button {
+    background: #2947A9;
+    border-radius: 4px;
+    color: white;
+    margin: auto;
+    width: 20%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    border: 1px solid purple;
+
+    padding: 16px 20px;
+
+}
+
+/* styling bottom section */
+.bottom {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 6rem;
+}
+
+.bottom p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+    color: #2947A9;
+    margin: 2rem 0;
+}
+
+form {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+form .email-box {
+
+    border-radius: 4px;
+
+
+}
+
+.subscribe {
+    width: 60%;
+
+    margin-left: 1.5rem;
+}
+
+.subscribe button {
+    width: 100%;
+    height: 40px;
+    background-color: #F9995D;
+    border: 2px solid #F9995D;
+    border-radius: 4px;
+    padding: auto 10px;
+    color: white;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+}
+
+.social {
+    display: flex;
+
+
+    padding-left: auto 0;
+}
+
+.tweeter {
+    margin-left: 3rem;
+}
+
+.linkden {
+
+    margin-left: 3rem;
+}
+
+/* styling footer section */
+
+
+.footer {
+    background-color: #2947A9;
+    width: 100%;
+    height: 70px;
+
+}
+
+
+.footer p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-top: 1.5rem;
+    padding-left: 3rem;
+    text-align: left;
+
+}
+
+/* styling webpage ends !!!! */
